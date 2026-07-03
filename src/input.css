@@ -8,6 +8,16 @@ body {
   overflow-x: hidden;
 }
 
+@media (max-width: 1023px) {
+  main {
+    padding-bottom: calc(8rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  footer {
+    padding-bottom: calc(7rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 html[dir="rtl"] .font-body,
 html[dir="rtl"] .font-headline {
   font-family: "Cairo", sans-serif;
