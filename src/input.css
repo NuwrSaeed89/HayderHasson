@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #fbf9fb;
+  color: #1b1b1d;
+  overflow-x: hidden;
+}
+
+html[dir="rtl"] .font-body,
+html[dir="rtl"] .font-headline {
+  font-family: "Cairo", sans-serif;
+}
+
+.circuit-bg {
+  background-image: radial-gradient(circle at 2px 2px, #c5c6cd 1px, transparent 0);
+  background-size: 40px 40px;
+  opacity: 0.1;
+}
+
+.timeline-trace { position: relative; }
+
+html[dir="ltr"] .timeline-trace::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: #75777e;
+  opacity: 0.2;
+  transform: translateX(-50%);
+}
+
+html[dir="rtl"] .timeline-trace::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: auto;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: #75777e;
+  opacity: 0.2;
+  transform: translateX(-50%);
+}
+
+.node-accent {
+  position: absolute;
+  top: 0.25rem;
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+  border: 2px solid #775a19;
+  z-index: 10;
+}
+
+html[dir="ltr"] .node-accent {
+  left: -4px;
+  right: auto;
+}
+
+html[dir="rtl"] .node-accent {
+  left: -4px;
+  right: auto;
+}
+
+html[dir="ltr"] .timeline-trace > .relative {
+  padding-inline-start: 0.75rem;
+  padding-inline-end: 0;
+}
+
+html[dir="rtl"] .timeline-trace > .relative {
+  padding-inline-start: 1.25rem;
+  padding-inline-end: 0;
+}
+
+html[dir="rtl"] .timeline-entry-header {
+  flex-direction: column !important;
+  align-items: flex-start;
+}
+
+html[dir="ltr"] .technical-chip { border-left: 2px solid #775a19; }
+html[dir="rtl"] .technical-chip { border-right: 2px solid #775a19; }
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+@media print {
+  nav, .mobile-nav, .no-print { display: none !important; }
+  body:not(.cv-print) aside { display: none !important; }
+  body:not(.cv-print) main { padding: 0 !important; }
+  body { background: white; }
+  .cv-print .cv-section-ar { page-break-before: always; break-before: page; }
+  .cv-print .cv-section { break-inside: avoid-page; }
+}
