@@ -105,4 +105,9 @@ html[dir="rtl"] .technical-chip { border-right: 2px solid #775a19; }
   body { background: white; }
   .cv-print .cv-section-ar { page-break-before: always; break-before: page; }
   .cv-print .cv-section { break-inside: avoid-page; }
+  .cv-print .graduation-project-card,
+  .cv-print .graduation-project-card img {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
 }
