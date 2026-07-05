@@ -9,49 +9,69 @@
   <link rel="stylesheet" href="css/styles.css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&amp;family=Cairo:wght@400;600;700&amp;display=swap"/>
 </head>
-<body class="font-body selection:bg-secondary selection:text-white">
+<body class="font-body loader-page selection:bg-secondary selection:text-white">
 
 <div class="loader-screen" id="loader">
-  <div class="text-center px-6">
-    <p class="font-headline text-sm font-bold tracking-widest text-primary uppercase mb-1">Haider Ahmad Hasson</p>
-    <p class="font-headline text-xs text-on-surface-variant mb-8">Mechanical &amp; Electrical</p>
+  <div class="circuit-bg absolute inset-0 pointer-events-none"></div>
+
+  <div class="loader-content relative z-10">
+    <div class="loader-photo">
+      <img alt="Haider Ahmad Hasson" width="120" height="120" src="images/11.jpeg"/>
+    </div>
+
+    <h1 class="loader-name font-headline uppercase">Haider Ahmad Hasson</h1>
+    <p class="loader-title font-headline">Mechanical &amp; Electrical</p>
+
+    <div class="loader-divider" aria-hidden="true"></div>
+
+    <div class="loader-ring" aria-hidden="true">
+      <svg viewBox="0 0 100 100">
+        <circle class="loader-track" cx="50" cy="50" r="45"/>
+        <circle class="loader-progress" cx="50" cy="50" r="45" id="progress-circle"/>
+      </svg>
+      <div class="loader-percent"><span id="progress-text">0%</span></div>
+    </div>
+
+    <p class="loader-status font-headline">Loading CV</p>
+    <p class="loader-substatus font-headline" id="loader-substatus">Preparing portfolio...</p>
   </div>
-  <div class="loader-ring" aria-hidden="true">
-    <svg viewBox="0 0 100 100">
-      <circle class="loader-track" cx="50" cy="50" r="45"/>
-      <circle class="loader-progress" cx="50" cy="50" r="45" id="progress-circle"/>
-    </svg>
-    <div class="loader-percent"><span id="progress-text">0%</span></div>
-  </div>
-  <p class="text-[11px] text-outline uppercase tracking-widest">Loading CV</p>
 </div>
 
 <script>
   (function () {
     var circle = document.getElementById('progress-circle');
     var text = document.getElementById('progress-text');
+    var substatus = document.getElementById('loader-substatus');
     var loader = document.getElementById('loader');
     var progress = 0;
     var circumference = 283;
+    var messages = [
+      'Preparing portfolio...',
+      'Loading experience...',
+      'Loading projects...',
+      'Almost ready...'
+    ];
 
     function setProgress(value) {
       progress = Math.min(100, Math.max(0, value));
       circle.style.strokeDashoffset = circumference - (circumference * progress / 100);
       text.textContent = Math.round(progress) + '%';
+      var index = Math.min(messages.length - 1, Math.floor(progress / 25));
+      substatus.textContent = messages[index];
     }
 
     function finish() {
       setProgress(100);
+      substatus.textContent = 'Welcome';
       sessionStorage.setItem('cv-loaded', '1');
       setTimeout(function () {
         loader.classList.add('is-hidden');
         window.location.replace('index.html');
-      }, 350);
+      }, 400);
     }
 
     setProgress(0);
 
-    var images = ['index.html'];
     var preload = new Image();
     preload.src = 'images/11.jpeg';
 

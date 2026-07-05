@@ -158,6 +158,95 @@ html[dir="rtl"] .technical-chip { border-right: 2px solid #775a19; }
   color: #775a19;
 }
 
+body.loader-page .loader-screen {
+  gap: 0;
+  background: linear-gradient(180deg, #fbf9fb 0%, #f5f3f5 100%);
+}
+
+body.loader-page .loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  max-width: 28rem;
+  width: 100%;
+}
+
+body.loader-page .loader-photo {
+  width: 7.5rem;
+  height: 7.5rem;
+  margin-bottom: 2rem;
+  border: 2px solid #775a19;
+  padding: 0.25rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+body.loader-page .loader-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 0.75rem;
+}
+
+body.loader-page .loader-name {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #000;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+body.loader-page .loader-title {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #775a19;
+  margin-bottom: 2rem;
+}
+
+body.loader-page .loader-divider {
+  width: 5rem;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #775a19, transparent);
+  margin-bottom: 2rem;
+}
+
+body.loader-page .loader-ring {
+  width: 8.5rem;
+  height: 8.5rem;
+  margin-bottom: 1.75rem;
+}
+
+body.loader-page .loader-ring circle {
+  stroke-width: 5;
+}
+
+body.loader-page .loader-percent {
+  font-size: 1.625rem;
+  font-weight: 700;
+}
+
+body.loader-page .loader-status {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #75777e;
+}
+
+body.loader-page .loader-substatus {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: #44474d;
+  letter-spacing: 0.05em;
+}
+
 @media print {
   nav, .mobile-nav, .no-print, .loader-screen { display: none !important; }
   body:not(.cv-print) aside { display: none !important; }
