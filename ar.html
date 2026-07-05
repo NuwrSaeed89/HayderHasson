@@ -60,64 +60,64 @@
 <div class="flex flex-col lg:flex-row min-h-screen pt-16">
   <!-- Sidebar -->
   <aside class="w-full lg:w-80 bg-surface-container-low border-l border-outline-variant flex flex-col lg:h-[calc(100vh-4rem)] lg:sticky lg:top-16 overflow-y-auto no-print">
-    <div class="p-8 flex flex-col items-center text-center">
-      <div class="group w-32 lg:w-40 h-32 lg:h-40 mb-6 border border-secondary p-1 transition-all duration-700 rounded-2xl overflow-hidden cursor-pointer">
+    <div class="sidebar-profile">
+      <div class="group w-32 lg:w-36 h-32 lg:h-36 mx-auto mb-5 border border-secondary p-1 transition-all duration-700 rounded-2xl overflow-hidden cursor-pointer">
         <img alt="حيدر احمد حسون" class="w-full h-full object-cover object-top rounded-xl grayscale group-hover:grayscale-0 group-active:grayscale-0 print:grayscale-0 transition-all duration-700 ease-in-out" width="160" height="160" decoding="async" fetchpriority="high" src="images/11.jpeg"/>
       </div>
-      <h1 class="font-headline text-2xl font-bold text-primary mb-2">حيدر احمد حسون</h1>
+      <h1 class="font-headline text-xl lg:text-2xl font-bold text-primary mb-1 leading-tight">حيدر احمد حسون</h1>
       <p class="text-secondary font-headline tracking-wider text-[11px] uppercase">الميكانيكة والكهربائية</p>
     </div>
-    <nav class="flex-1 px-4 hidden lg:block">
-      <div class="space-y-1">
-        <a class="flex items-center gap-4 text-primary font-bold border-r-4 border-secondary p-4 bg-surface-container-high transition-all" href="#">
+    <nav class="sidebar-nav hidden lg:block">
+      <div class="sidebar-nav-list">
+        <a class="sidebar-link sidebar-link-active" href="#">
           <span class="material-symbols-outlined">person</span>
           <span class="font-headline text-[13px]">الملخص المهني</span>
         </a>
-        <a class="flex items-center gap-4 text-on-surface-variant p-4 hover:bg-surface-container-high transition-all" href="#experience">
+        <a class="sidebar-link" href="#experience">
           <span class="material-symbols-outlined">timeline</span>
           <span class="font-headline text-[13px]">الخبرة العملية</span>
         </a>
-        <a class="flex items-center gap-4 text-on-surface-variant p-4 hover:bg-surface-container-high transition-all" href="#education">
+        <a class="sidebar-link" href="#education">
           <span class="material-symbols-outlined">school</span>
           <span class="font-headline text-[13px]">التعليم</span>
         </a>
-        <a class="flex items-center gap-4 text-on-surface-variant p-4 hover:bg-surface-container-high transition-all" href="#projects">
+        <a class="sidebar-link" href="#projects">
           <span class="material-symbols-outlined">settings_input_component</span>
           <span class="font-headline text-[13px]">المشاريع</span>
         </a>
-        <a class="flex items-center gap-4 text-on-surface-variant p-4 hover:bg-surface-container-high transition-all" href="#skills">
+        <a class="sidebar-link" href="#skills">
           <span class="material-symbols-outlined">terminal</span>
           <span class="font-headline text-[13px]">المهارات التقنية</span>
         </a>
       </div>
     </nav>
-    <div class="px-8 pb-6 lg:px-4 lg:pb-0 lg:mt-10">
-      <h3 class="text-[11px] font-bold text-outline uppercase tracking-widest mb-4">اتصال</h3>
-      <div class="space-y-4">
-        <div class="flex items-center gap-3 text-sm">
-          <span class="material-symbols-outlined text-secondary scale-75">mail</span>
-          <a href="mailto:haidarhasson983@gmail.com" class="font-technical hover:text-secondary">haidarhasson983@gmail.com</a>
+    <div class="sidebar-contact">
+      <h3 class="sidebar-section-title font-headline">اتصال</h3>
+      <div class="sidebar-contact-list">
+        <div class="sidebar-contact-item">
+          <span class="material-symbols-outlined">mail</span>
+          <a href="mailto:haidarhasson983@gmail.com" class="font-technical hover:text-secondary break-all">haidarhasson983@gmail.com</a>
         </div>
-        <div class="flex items-center gap-3 text-sm">
-          <span class="material-symbols-outlined text-secondary scale-75">call</span>
+        <div class="sidebar-contact-item">
+          <span class="material-symbols-outlined">call</span>
           <a href="tel:+963938779784" class="font-technical hover:text-secondary" dir="ltr">+963 938 779 784</a>
         </div>
-          <div class="flex items-center gap-3 text-sm">
-            <span class="material-symbols-outlined text-secondary scale-75">location_on</span>
-            <span>دمشق، سوريا</span>
-          </div>
-          <div class="flex items-center gap-3 text-sm">
-            <span class="material-symbols-outlined text-secondary scale-75">cake</span>
-            <span class="font-technical" dir="ltr">15/7/2001</span>
-          </div>
+        <div class="sidebar-contact-item">
+          <span class="material-symbols-outlined">location_on</span>
+          <span>دمشق، سوريا</span>
         </div>
+        <div class="sidebar-contact-item">
+          <span class="material-symbols-outlined">cake</span>
+          <span class="font-technical" dir="ltr">15/7/2001</span>
+        </div>
+      </div>
     </div>
-    <div class="p-8 border-t border-outline-variant flex justify-between items-center hidden lg:flex">
+    <div class="sidebar-footer flex justify-between items-center hidden lg:flex">
       <div class="flex gap-4">
         <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-secondary">share</span>
         <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-secondary">code</span>
       </div>
-      <a href="mailto:haidarhasson983@gmail.com" class="text-[11px] font-bold border border-primary px-4 py-1 hover:bg-primary hover:text-white transition-all rounded-lg">تواصل معي</a>
+      <a href="mailto:haidarhasson983@gmail.com" class="text-[11px] font-bold border border-primary px-4 py-1.5 hover:bg-primary hover:text-white transition-all rounded-lg">تواصل معي</a>
     </div>
   </aside>
 
@@ -245,6 +245,9 @@
               <span class="technical-chip bg-white border border-outline-variant px-4 py-2 text-primary font-headline text-xs hover:border-secondary transition-colors">PVsyst</span>
               <span class="technical-chip bg-white border border-outline-variant px-4 py-2 text-primary font-headline text-xs hover:border-secondary transition-colors">AutoCAD</span>
               <span class="technical-chip bg-white border border-outline-variant px-4 py-2 text-primary font-headline text-xs hover:border-secondary transition-colors">التحكم الكلاسيكي</span>
+              <span class="technical-chip bg-white border border-outline-variant px-4 py-2 text-primary font-headline text-xs hover:border-secondary transition-colors">Microsoft Word</span>
+              <span class="technical-chip bg-white border border-outline-variant px-4 py-2 text-primary font-headline text-xs hover:border-secondary transition-colors">Microsoft Excel</span>
+              <span class="technical-chip bg-white border border-outline-variant px-4 py-2 text-primary font-headline text-xs hover:border-secondary transition-colors">Microsoft PowerPoint</span>
             </div>
           </div>
           <div>
